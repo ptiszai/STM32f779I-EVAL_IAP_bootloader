@@ -267,25 +267,18 @@ void Jump_to_app_flash(void)
 	__HAL_RCC_GPIOH_CLK_DISABLE();
 	__HAL_RCC_GPIOF_CLK_DISABLE();
 
-	// Test if user code is programmed starting from address "APPLICATION_ADDRESS" 
-   //uint32_t temp = (*(__IO uint32_t*)APPLICATION_ADDRESS);
-	//uint32_t temp0 = temp & 0x2FFE0000;
+	// Test if user code is programmed starting from address "APPLICATION_ADDRESS"   
 	if (((*(__IO uint32_t*)APPLICATION_ADDRESS) & 0x2FFE0000) == 0x20080000)
-	{	
-		//	__disable_irq();			
-			SCB->VTOR = APPLICATION_ADDRESS;
+	{					
+		SCB->VTOR = APPLICATION_ADDRESS;
 		// Jump to user application 
-		JumpAddress = *(__IO uint32_t*)(APPLICATION_ADDRESS + 4);
-		//JumpAddress = 0x08008704;
+		JumpAddress = *(__IO uint32_t*)(APPLICATION_ADDRESS + 4);		
 		JumpToApplication = (pFunction) JumpAddress;
 		// Initialize user application's Stack Pointer 
-//	__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS);
-	__set_MSP(0x20080000);		
+		__set_MSP(*(__IO uint32_t*) APPLICATION_ADDRESS);			
 		JumpToApplication();
 	}	
 }
-
-
 
 /**
   * @}

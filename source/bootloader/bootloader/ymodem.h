@@ -87,7 +87,8 @@ typedef enum
  * the first byte is left unused for memory alignment reasons                 */
 
 #define FILE_NAME_LENGTH        ((uint32_t)64)
-#define FILE_SIZE_LENGTH        ((uint32_t)16)
+// #define FILE_SIZE_LENGTH        ((uint32_t)12)   // old
+#define FILE_SIZE_LENGTH        ((uint32_t)32)		// new, 2018.01.01
 
 #define SOH                     ((uint8_t)0x01)  /* start of 128-byte data packet */
 #define STX                     ((uint8_t)0x02)  /* start of 1024-byte data packet */

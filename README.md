@@ -13,7 +13,10 @@ Bootloader driver is based on the STM32Cube bootloader implementation by STMicro
 
 directory in PC: .\Projects\STM32F769I_EVAL\Applications\IAP\..
 
-Bootloader driver only work in the series Flash memory single bank mode .
+Bootloader driver only work in the series Flash memory single bank mode.
+Original base code can only 1024 * 255 (unsigned char type number) packets received.
+New, modified code can 1024 * 65535 (unsigned short type number) packets received.
+I tested 285 Kbytes, it is good.
 
 
 ## Building enviroment
@@ -24,7 +27,7 @@ Visual Studio 2015
 
 ## Description
 
-First time. Programmed bin\bootloader.bin file to the Flash 0x08000000 address width ST-Link (STM32 ST-LINK Utility.exe). Connected to CN22 USB.
+First time. Programmed binary\bootloader.bin file to the Flash 0x08000000 address width ST-Link (STM32 ST-LINK Utility.exe). Connected to CN22 USB.
 
 The jumper JP5 must be closed.
 
@@ -47,12 +50,12 @@ Follow the sequence below to download a binary file via putty.exe into the STM32
 1. Press 1 on the keyboard to select the Download image to the internal Flash menu option.
 2. Select "Files Transfer/YMODEM/Send" from the putty.exe menu.
 ![Bootloader sequence](kep4.png)
-3. In putty.exe YMODEM Send dialog window, select the binary file of the application: bin\bootloaderApplication.bin
+3. In putty.exe YMODEM Send dialog window, select the binary file of the application: binary\bootloaderApplication.bin
 4. Click the Open button.
 5. The IAP bootloader driver then loads the binary file into the internal Flash memory starting from the defined base address and displays the binary file name and size in the Tera Term window.
 ![Bootloader sequence](kep5.png) 
 6. Execute the loaded application, press 3 or press Reset button (B1) on card.
-7. bin\bootloaderApplication.bin to programmed in Flash at 0x08008000 address. 
+7. binary\bootloaderApplication.bin to programmed in Flash at 0x08008000 address. 
 8. Ready
 
 ## References

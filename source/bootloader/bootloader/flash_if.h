@@ -129,7 +129,7 @@ enum{
                                       OB_WRP_DB_SECTOR_20 | OB_WRP_DB_SECTOR_21 | OB_WRP_DB_SECTOR_22 | OB_WRP_DB_SECTOR_23 )
 #else  /* Use a Single Bank Flash */
   /* End of the Flash address */
-  #define USER_FLASH_END_ADDRESS      (uint32_t)0x0800FFFF
+  #define USER_FLASH_END_ADDRESS      (uint32_t)0x0808FFFF
   /* Define the user application size */
   #define USER_FLASH_SIZE   (USER_FLASH_END_ADDRESS - APPLICATION_ADDRESS + 1)
 

@@ -203,8 +203,8 @@ void Main_Menu(void)
 			break;
 		case '3' :
 			Serial_PutString((uint8_t *)"Start program execution......\r\n\n");
-			Jump_to_app_flash();
-			ConfigError_Handler();	    
+			Jump_to_app_flash(); 	// new, 2018.01.01
+			ConfigError_Handler();	// new, 2018.01.01    
 			break;
 		case '4' :
 			if (FlashProtection != FLASHIF_PROTECTION_NONE)

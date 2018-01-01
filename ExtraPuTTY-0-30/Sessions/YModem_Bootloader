@@ -263,7 +263,7 @@ DD_CMD_AF\sync\
 DD_CMD_BF\\
 DD_TYPE\3\
 DD_CT_FILE\%2A.cmd\
-DD_CT_MS\500\
+DD_CT_MS\1000\
 DD_CONTENT\0\
 DD_LUA\1\
 DD_STAT\1\
@@ -325,8 +325,8 @@ Protocol\serial\
 SSHLogOmitData\0\
 SSHLogOmitPasswords\1\
 LogFlush\1\
-LogFileClash\-1\
-LogType\0\
+LogFileClash\0\
+LogType\1\
 LogFileName\putty.log\
 HostName\\
 Present\1\
